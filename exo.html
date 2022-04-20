@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      /*variables must be defined with two dash(--) before
+      var (variable name, fallback value);
+      */
+
+      :root {
+        --mainColor: azure;
+      }
+      body {
+        background-color: var(--mainColor, white);
+        margin: 0;
+        min-height: 5000px;
+        counter-increment: product-counter;
+      }
+      div {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        background-color: #eee;
+        float: left;
+        width: calc((100% - 90px) / 5);
+        margin-left: 15px;
+        margin-top: 350px;
+        font-weight: 800;
+        text-transform: capitalize;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 0.175s 0.2s linear;
+      }
+      div::after {
+        content: counter(product-counter);
+        background-color: #383838;
+        color: dodgerblue;
+        margin-left: 3px;
+        display: none;
+      }
+      div:hover::after {
+        display: unset;
+      }
+      div:hover {
+        background: linear-gradient(#d9ecfc, #d7f2fa, #caeaf8);
+        color: dodgerblue;
+        font-size: larger;
+      }
+      .halo {
+        position: relative;
+        top: 400px;
+      }
+
+      nav {
+        padding: 10px;
+        margin: 20px 41.9%;
+        width: 15%;
+        border-radius: 20px;
+        position: sticky;
+        top: 15px;
+        z-index: 1000;
+        opacity: 1.5;
+        background-color: rgb(223, 219, 219);
+        box-shadow: 0px 4px 9px 1px #ddd;
+      }
+      h2 {
+        position: absolute;
+        top: 100px;
+        left: 679px;
+        background-color: #dfdbdb;
+      }
+      .navbar {
+        padding: auto;
+        width: 25px;
+        margin-left: 37.5px;
+        transition: all 0.2s 0.1s linear;
+      }
+      .navbar:hover {
+        width: 30px;
+        image-rendering: pixelated;
+      }
+
+      .scrollup {
+        scroll-behavior: smooth;
+        position: fixed;
+        right: 40px;
+        bottom: 20px;
+        width: 35px;
+        transition: width 0.4s 0.15s ease;
+      }
+      .scrollup:hover {
+        width: 40px;
+      }
+      /*h2::first-letter {
+        background-color: rgb(54, 53, 53);
+        color: whitesmoke;
+        font-size: 25px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h2:hover::first-letter {
+        color: black;
+        background-color: white;
+      }*/
+      div::selection {
+        color: bisque;
+        background-color: rgb(50, 51, 51);
+      }
+      h2::before {
+        content: "";
+        height: 100%;
+        width: 5px;
+        background-color: rgb(63, 63, 63);
+        position: absolute;
+        left: -16px;
+      }
+      h2::after {
+        content: "";
+        height: 100%;
+        width: 5px;
+        background-color: rgb(63, 63, 63);
+        position: absolute;
+        right: -16px;
+      }
+      .co::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        position: absolute;
+        margin-left: -20px;
+        margin-top: 3px;
+      }
+      .co:hover::before {
+        margin-top: 6px;
+        background-color: dodgerblue;
+      }
+
+      /*
+      Content Width Is: 100%
+      6 Spaces 15px * 6 => 90px From Content Width
+      100% - 90px Available Space
+      5 Elements The Width Is: (100% - 90px) / 5
+      */
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#"
+        ><img class="navbar" src="/imgs/icons8-home-page-50.png" alt=""
+      /></a>
+      <a href="#"
+        ><img class="navbar" src="/imgs/icons8-github-50.png" alt=""
+      /></a>
+      <a href="#"
+        ><img class="navbar" src="/imgs/icons8-gmail-login-50.png" alt=""
+      /></a>
+    </nav>
+    <h2>Welcome To My Store</h2>
+    <a href="#"><img class="scrollup" src="/imgs/icons8-scroll-up-50.png" /></a>
+    <div class="co">product 1</div>
+    <div class="halo co">product 4</div>
+    <div class="co">product 2</div>
+    <div class="halo co">product 5</div>
+    <div class="co">product 3</div>
+  </body>
+</html>
